@@ -1,0 +1,26 @@
+section{
+    min-height:800px;
+}
+
+img {
+    min-width: 100px;
+    max-width: 100px;
+}
+
+
+body {
+    font-family: "Calibri Light";
+}
+
+h3 {
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
+
+.error p{
+    color: red;
+}
+
+.imageDetail img{
+    min-width: 200px;
+    max-width: 200px;
+}

@@ -1,0 +1,34 @@
+<div ng-include="'app/views/user-nav.tmpl.html'">
+</div>
+<br>
+<div class="container">
+    <div>
+        <input type="search" ng-model="moviesVm.searchText" placeholder="Search Movies here.." class="form-control">
+    </div>
+    <h3>List of Movies</h3>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th></th>
+            <th ng-click="moviesVm.changeOrder('title')">Title</th>
+            <th ng-click="moviesVm.changeOrder('year')">Year</th>
+            <th>Rated</th>
+            <th>Genre</th>
+            <th ng-click="moviesVm.changeOrder('imdbRating')">IMDB</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="movie in moviesVm.movies | filter:moviesVm.searchText | orderBy:moviesVm.sorter.by:moviesVm.sorter.reverse">
+        <td>
+            <a href="#/home/{{movie.id}}"><img ng-src="{{movie.poster}}"></a>
+        </td>
+        <td>{{movie.title}}</td>
+        <td>{{movie.year}}</td>
+        <td>{{movie.rated}}</td>
+        <td>{{movie.genre}}</td>
+        <td>{{movie.imdbRating}}</td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>

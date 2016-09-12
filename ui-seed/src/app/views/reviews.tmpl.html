@@ -1,0 +1,67 @@
+<div ng-include="'app/views/user-nav.tmpl.html'">
+</div>
+<div class="container">
+    <h3>Reviews:</h3><br>
+    <div class="row">
+
+        <div class="col-sm-4">
+
+            <h4><b>Rate the movie:</b></h4>
+            <form name="reviewForm" ng-submit="reviewsVm.addReview()" novalidate>
+
+                <div class="form-group">
+                    <label for="userRatings">Rating:</label>
+                    <select class="form-control" name="userRatings" id="userRatings"
+                            ng-model="reviewsVm.newReview.userRatings" required>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Add a Review (140 characters):</label>
+                    <textarea name="comments" id="comments" class="form-control" rows="3"
+                              ng-model="reviewsVm.newReview.comments"
+                              placeholder="Enter your comments here" required
+                              maxlength="140"> </textarea>
+                    <div ng-messages="reviewForm.comments.$error" class="error" ng-if="reviewForm.comments.$dirty">
+                        <p ng-message="required">Review cannot be empty</p>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" ng-disabled="reviewForm.$invalid" class="btn btn-primary">Post</button>
+                    <a href="#/home/">Users</a>
+                </div>
+            </form>
+
+
+        </div>
+        <div class="col-sm-8">
+
+            <h4><b>Movie Reviews (Users):</b></h4>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Reviewer</th>
+                    <th>Rating</th>
+                    <th>Review</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="review in reviewsVm.reviews">
+
+                    <td>{{review.username}}</td>
+                    <td>{{review.userRatings}}</td>
+                    <td>{{review.comments}}</td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

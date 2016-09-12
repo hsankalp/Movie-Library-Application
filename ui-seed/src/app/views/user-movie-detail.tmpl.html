@@ -1,0 +1,86 @@
+<div ng-include="'app/views/user-nav.tmpl.html'">
+</div>
+<div class="container">
+
+    <div class="row">
+        <h3>{{movieDetailVm.currentMovie.title}} ({{movieDetailVm.currentMovie.year}})</h3>
+        <br>
+        <div class="row">
+            <div class="col-xs-5">
+                <a class="imageDetail"><img class="movie-poster" ng-src="{{movieDetailVm.currentMovie.poster}}"></a>
+                <br><br><br>
+                <a href="#/reviews/{{movieDetailVm.currentMovie.id}}" class="btn btn-primary">Movie reviews</a>
+            </div>
+            <div class="col-xs-7">
+                <table>
+                    <tr>
+                        <td><b>IMDB Id:</b></td>
+                        <td><a ng-href="http://www.imdb.com/title/{{movieDetailVm.currentMovie.imdbID}}/">{{movieDetailVm.currentMovie.imdbID}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Year:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.year}}</i></td>
+                    <tr>
+                        <td><b>Rated:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.rated}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>Released:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.released}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>Runtime:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.runtime}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>Genre:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.genre}}</i></td>
+                    </tr>
+                    </tr>
+
+                    <tr>
+                        <td><b>Director:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.director}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>Writer:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.writer}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>Actors:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.actors}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>Plot:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.plot}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>Language:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.language}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>Country:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.country}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>Awards:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.awards}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>Metascore:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.metascore}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>IMDB Rating:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.imdbRating}}</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>IMDB Votes:</b></td>
+                        <td><i>{{movieDetailVm.currentMovie.imdbVotes}}</i></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
