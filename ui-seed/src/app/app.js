@@ -64,8 +64,8 @@
             })
     }
 
-    run.$inject = ['$rootScope', '$location', '$cookieStore'];
-    function run($rootScope, $location, $cookieStore) {
+    run.$inject = ['$rootScope', '$location', '$cookieStore','Notification'];
+    function run($rootScope, $location, $cookieStore, Notification) {
         $rootScope.globals = $cookieStore.get('globals') || {};
 
         $rootScope.$on('$routeChangeStart', function (event, next, current) {
@@ -75,10 +75,13 @@
             if (restrictedPage && !loggedIn) {
 
                 $location.path('/login');
+
+
             }
             else if (loggedIn && $.inArray(loggedIn.role, next.roles)) {
 
                 $location.path('/login');
+
             }
         });
     }

@@ -12,10 +12,6 @@ body {
     font-family: "Calibri Light";
 }
 
-h3 {
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-}
-
 .error p{
     color: red;
 }
