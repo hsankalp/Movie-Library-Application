@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.hsankalp.entity.Review;
+import io.hsankalp.exception.EntityNotFoundException;
 import io.hsankalp.service.ReviewService;
 
 @CrossOrigin
@@ -28,8 +29,13 @@ public class ReviewController {
 	}
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public List<Review> findOne(@PathVariable("id") String id){
-		return service.findAll(id);
+	public List<Review> findAll(@PathVariable("id") String movieId){
+		return service.findAll(movieId);
+	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public void delete(@PathVariable("id") String reviewId) throws EntityNotFoundException{
+		service.delete(reviewId);
 	}
 	
 }

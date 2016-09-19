@@ -7,6 +7,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
+
+import io.hsankalp.entity.Movie;
 import io.hsankalp.entity.Review;
 
 
@@ -23,10 +25,21 @@ public class ReviewRepositoryImpl implements ReviewRepository{
 	}
 
 	@Override
-	public List<Review> findAll(String id) {
+	public List<Review> findAll(String movieId) {
 		TypedQuery<Review> query = em.createNamedQuery("Review.findAllById", Review.class);
-		query.setParameter("pId", id);
+		query.setParameter("pId", movieId);
 		return query.getResultList();
+	}
+
+	@Override
+	public Review findOne(String reviewId) {
+		return em.find(Review.class, reviewId);
+	}
+
+	@Override
+	public void delete(Review review) {
+		em.remove(review);
+		
 	}
 
 	

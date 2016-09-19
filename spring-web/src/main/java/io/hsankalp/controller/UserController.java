@@ -50,9 +50,9 @@ public class UserController {
 		return service.login(username, password);
 	}
 	
-	@RequestMapping(value="/{id}",method=RequestMethod.PUT, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public User update (@PathVariable("id") String id, @RequestBody User user) throws EntityNotFoundException {
-		return service.update(id, user);
+	@RequestMapping(method=RequestMethod.PUT, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public User update (@RequestBody User user) throws EntityNotFoundException {
+		return service.update(user);
 	}
 	
 	@RequestMapping(value="/{username}", method=RequestMethod.DELETE, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)

@@ -1,11 +1,11 @@
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('plunker')
         .controller('UsersController', UsersController);
 
-    UsersController.$inject = ['userService','Notification'];
+    UsersController.$inject = ['userService', 'Notification'];
 
     function UsersController(userService, Notification) {
 
@@ -22,9 +22,9 @@
 
             userService
                 .getUsers()
-                .then(function(users) {
+                .then(function (users) {
                     usersVm.users = users;
-                }, function(error) {
+                }, function (error) {
                     Notification.error("Unable to fetch users");
                 });
 
@@ -34,11 +34,10 @@
         function deleteUser(position) {
 
             userService.deleteUser(usersVm.users[position].username)
-                .then(function(response) {
-                    if (response!==null) {
-                        init();
-                        Notification.success("User deleted from the Database");
-                    }
+                .then(function (response) {
+                    init();
+                    Notification.success("User deleted from the Database");
+
                 }, function (response) {
                     Notification.error("Unable to delete the user. Try again");
                 })

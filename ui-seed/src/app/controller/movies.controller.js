@@ -1,13 +1,13 @@
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('plunker')
         .controller('MoviesController', MoviesController);
 
-    MoviesController.$inject = ['movieService','Notification'];
+    MoviesController.$inject = ['movieService', 'Notification'];
 
-    function MoviesController(movieService,Notification) {
+    function MoviesController(movieService, Notification) {
 
         var moviesVm = this;
 
@@ -27,22 +27,22 @@
 
             movieService
                 .getMovies()
-                .then(function(movies) {
+                .then(function (movies) {
                     moviesVm.movies = movies;
-                }, function(error) {
+                }, function (error) {
                     Notification.error("Unable to fetch movies");
                 });
 
         }
 
-        function changeOrder(property){
+        function changeOrder(property) {
             moviesVm.sorter.by = property;
             moviesVm.sorter.reverse = !moviesVm.sorter.reverse;
         }
 
         function addMovie() {
             movieService.addMovie(moviesVm.newMovie)
-                .then(function(response) {
+                .then(function (response) {
                     init();
                     moviesVm.newMovie = null;
                     Notification.success("Movie added to the Database");
@@ -55,11 +55,10 @@
         function deleteMovie(position) {
 
             movieService.deleteMovie(moviesVm.movies[position].id)
-                .then(function(response) {
-                    if (response!==null) {
-                        init();
-                        Notification.success("Movie deleted from the Database");
-                    }
+                .then(function (response) {
+                    init();
+                    Notification.success("Movie deleted from the Database");
+
                 }, function (response) {
                     Notification.error("Unable to delete the movie. Try again");
                 })

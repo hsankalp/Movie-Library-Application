@@ -1,7 +1,9 @@
 <div ng-include="'app/views/user-nav.tmpl.html'">
 </div>
 <br>
+<h3>Hello, <b>@{{globals.currentUser.username}}</b></h3><br>
 <div class="container">
+
     <div>
         <input type="search" ng-model="moviesVm.searchText" placeholder="Search Movies here.." class="form-control">
     </div>

@@ -13,6 +13,7 @@
 
         self.getReviews = getReviews;
         self.addReview = addReview;
+        self.deleteReview = deleteReview;
 
         function getReviews(id) {
             return $http.get(CONFIG.API_HOST + '/reviews/' + id)
@@ -22,6 +23,11 @@
         function addReview(review) {
             return $http.post(CONFIG.API_HOST + '/reviews', review)
                 .then(successFn, errorFn);
+        }
+
+        function deleteReview(reviewId) {
+            return $http.delete(CONFIG.API_HOST + '/reviews/' + reviewId)
+                .then(successFn,errorFn);
         }
 
         function successFn(response) {

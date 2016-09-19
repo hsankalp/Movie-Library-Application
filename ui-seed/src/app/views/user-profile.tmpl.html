@@ -1,0 +1,24 @@
+<div ng-include="'app/views/user-nav.tmpl.html'">
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-7">
+            <br>
+            <h4><b>First Name: </b><i>{{profileVm.currentUser.firstName}}</i></h4>
+
+            <h4><b>Last Name: </b><i>{{profileVm.currentUser.lastName}}</i></h4>
+
+            <h4><b>Email ID: </b><i>{{profileVm.currentUser.email}}</i></h4>
+
+            <h4><b>Username: </b><i>{{profileVm.currentUser.username}}</i></h4>
+
+            <h4><b>Phone: </b><i>{{profileVm.currentUser.phone}}</i></h4>
+
+            <br><a class="btn btn-primary" ng-click="profileVm.showEditForm()">Edit Profile</a>
+        </div>
+
+        <div class="col-xs-5" ng-include="'app/views/user-edit-form.tmpl.html'" ng-if="profileVm.editForm">
+        </div>
+    </div>
+</div>

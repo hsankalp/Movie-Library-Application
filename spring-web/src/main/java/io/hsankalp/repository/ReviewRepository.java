@@ -8,6 +8,10 @@ public interface ReviewRepository {
 
 	public Review create(Review review);
 
-	public List<Review> findAll(String id);
+	public List<Review> findAll(String movieId);
+
+	public Review findOne(String reviewId);
+
+	public void delete(Review review);
 
 }

@@ -12,7 +12,7 @@ public interface UserService {
 	public User findOne (String id) throws EntityNotFoundException;
 	public User findByUsername (String username) throws EntityNotFoundException;
 	public boolean create (User user) throws EntityExistsException;
-	public User update (String id, User user) throws EntityNotFoundException;
+	public User update (User user) throws EntityNotFoundException;
 	public User delete (String username) throws EntityNotFoundException;
 	public String login(String username, String password) throws EntityNotFoundException;
 }

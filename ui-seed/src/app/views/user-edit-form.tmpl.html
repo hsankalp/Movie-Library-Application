@@ -1,0 +1,51 @@
+<form name="profileUpdateForm" ng-submit="profileVm.editUser()" novalidate>
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" ng-model="profileVm.currentUser.firstName" name="firstName" id="firstName" required minlength="2">
+        <div ng-messages="profileUpdateForm.firstName.$error" class="error" ng-if="profileUpdateForm.firstName.$dirty">
+            <p ng-message="required">First Name cannot be empty</p>
+            <p ng-message="minlength">First Name must me more than 2 characters</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" ng-model="profileVm.currentUser.lastName" name="lastName" id="lastName" required minlength="2">
+        <div ng-messages="profileUpdateForm.lastName.$error" class="error" ng-if="profileUpdateForm.lastName.$dirty">
+            <p ng-message="required">Last Name cannot be empty</p>
+            <p ng-message="minlength">Last Name must me more than 2 characters</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email ID</label>
+        <input type="email" class="form-control" ng-model="profileVm.currentUser.email" name="email" id="email" required>
+        <div ng-messages="profileUpdateForm.email.$error" class="error" ng-if="profileUpdateForm.email.$dirty">
+            <p ng-message="required">Email cannot be empty</p>
+            <p ng-message="email">Email is invalid</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" ng-model="profileVm.currentUser.username" name="username" id="username" required minlength="8">
+        <div ng-messages="profileUpdateForm.username.$error" class="error" ng-if="profileUpdateForm.username.$dirty">
+            <p ng-message="required">Username cannot be empty</p>
+            <p ng-message="minlength">Username must me more than 8 characters</p>
+        </div>
+    </div>
+    <div class="form-group">
+
+        <input type="hidden" class="form-control" ng-model="profileVm.currentUser.password" id="password">
+
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" ng-model="profileVm.currentUser.phone" name="phone" id="phone" required minlength="10" maxlength="10" >
+        <div ng-messages="profileUpdateForm.phone.$error" class="error" ng-if="profileUpdateForm.phone.$dirty">
+            <p ng-message="required">Phone Number cannot be empty</p>
+            <p ng-message="minlength">Phone Number must be 10 Digits</p>
+        </div>
+    </div>
+
+    <br>
+    <button type="submit" ng-disabled="profileUpdateForm.$invalid" class="btn btn-primary">Update Profile</button>
+
+</form>

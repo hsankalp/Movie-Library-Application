@@ -54,8 +54,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User update(String id, User user) throws EntityNotFoundException {
-		User existing = repo.findOne(id);
+	public User update(User user) throws EntityNotFoundException {
+		User existing = repo.findOne(user.getId());
 		if (existing == null) {
 			throw new EntityNotFoundException();
 		}

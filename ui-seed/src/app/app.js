@@ -23,6 +23,12 @@
                 controllerAs: 'moviesVm',
                 roles:['user']
             })
+            .when('/profile/:username', {
+                templateUrl: 'app/views/user-profile.tmpl.html',
+                controller: 'ProfileController',
+                controllerAs: 'profileVm',
+                roles:['user']
+            })
             .when('/register', {
                 templateUrl: 'app/views/register.tmpl.html',
                 controller: 'RegisterController',

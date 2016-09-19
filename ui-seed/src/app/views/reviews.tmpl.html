@@ -3,49 +3,7 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-xs-5">
-
-            <h4><b>Rate the movie:</b></h4>
-            <form name="reviewForm" ng-submit="reviewsVm.addReview()" novalidate>
-
-                <div class="form-group">
-                    <label for="userRatings">Rating:</label>
-                    <select class="form-control" name="userRatings" id="userRatings"
-                            ng-model="reviewsVm.newReview.userRatings" required>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-
-                </div>
-
-                <div class="form-group">
-                    <label for="comments">Add a Review (140 characters):</label>
-                    <textarea name="comments" id="comments" class="form-control" rows="3"
-                              ng-model="reviewsVm.newReview.comments"
-                              placeholder="Enter your comments here" required
-                              maxlength="140"> </textarea>
-                    <div ng-messages="reviewForm.comments.$error" class="error" ng-if="reviewForm.comments.$dirty">
-                        <p ng-message="required">Review cannot be empty</p>
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit" ng-disabled="reviewForm.$invalid" class="btn btn-primary">Post</button>
-
-                </div>
-            </form>
-            <br>
-            <div>
-                <h4><b>Preview:</b></h4>
-                <blockquote>
-                    <strong>Rating: {{reviewsVm.newReview.userRatings}}</strong>
-                    <p>{{reviewsVm.newReview.comments}}</p>
-                </blockquote>
-            </div>
-
+        <div class="col-xs-5" ng-include="'app/views/review-form.tmpl.html'">
         </div>
 
         <div class="col-xs-5">
@@ -57,6 +15,7 @@
                     <p>@{{review.username}}</p>
                     <strong>Rating: {{review.userRatings}}</strong>
                     <p>{{review.comments}}</p>
+                    <i ng-click="reviewsVm.deleteReview($index)" ng-if="review.username===globals.currentUser.username" class="glyphicon glyphicon-remove"></i>
                 </blockquote>
             </div>
 
