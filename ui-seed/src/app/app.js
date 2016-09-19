@@ -19,8 +19,8 @@
             })
             .when('/home', {
                 templateUrl: 'app/views/user-home.tmpl.html',
-                controller: 'MoviesController',
-                controllerAs: 'moviesVm',
+                controller: 'UserMoviesController',
+                controllerAs: 'userMoviesVm',
                 roles:['user']
             })
             .when('/profile/:username', {

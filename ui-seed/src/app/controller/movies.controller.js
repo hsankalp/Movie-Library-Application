@@ -13,7 +13,6 @@
 
         moviesVm.addMovie = addMovie;
         moviesVm.deleteMovie = deleteMovie;
-        moviesVm.changeOrder = changeOrder;
 
         init();
 
@@ -33,11 +32,6 @@
                     Notification.error("Unable to fetch movies");
                 });
 
-        }
-
-        function changeOrder(property) {
-            moviesVm.sorter.by = property;
-            moviesVm.sorter.reverse = !moviesVm.sorter.reverse;
         }
 
         function addMovie() {

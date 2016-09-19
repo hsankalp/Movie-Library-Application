@@ -5,22 +5,22 @@
 <div class="container">
 
     <div>
-        <input type="search" ng-model="moviesVm.searchText" placeholder="Search Movies here.." class="form-control">
+        <input type="search" ng-model="userMoviesVm.searchText" placeholder="Search Movies here.." class="form-control">
     </div>
     <h3>List of Movies</h3>
     <table class="table table-striped">
         <thead>
         <tr>
             <th></th>
-            <th ng-click="moviesVm.changeOrder('title')">Title</th>
-            <th ng-click="moviesVm.changeOrder('year')">Year</th>
+            <th ng-click="userMoviesVm.changeOrder('title')">Title</th>
+            <th ng-click="userMoviesVm.changeOrder('year')">Year</th>
             <th>Rated</th>
             <th>Genre</th>
-            <th ng-click="moviesVm.changeOrder('imdbRating')">IMDB</th>
+            <th ng-click="userMoviesVm.changeOrder('imdbRating')">IMDB</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="movie in moviesVm.movies | filter:moviesVm.searchText | orderBy:moviesVm.sorter.by:moviesVm.sorter.reverse">
+        <tr ng-repeat="movie in userMoviesVm.movies | filter:userMoviesVm.searchText | orderBy:userMoviesVm.sorter.by:userMoviesVm.sorter.reverse">
         <td>
             <a href="#/home/{{movie.id}}"><img ng-src="{{movie.poster}}"></a>
         </td>
