@@ -5,14 +5,15 @@
         .module('plunker')
         .controller('ReviewController', ReviewController);
 
-    ReviewController.$inject = ['reviewService', '$routeParams', '$rootScope', 'Notification'];
+    ReviewController.$inject = ['reviewService', '$routeParams', '$rootScope', 'Notification', '$window'];
 
-    function ReviewController(reviewService, $routeParams, $rootScope, Notification) {
+    function ReviewController(reviewService, $routeParams, $rootScope, Notification, $window) {
 
         var reviewsVm = this;
 
         reviewsVm.addReview = addReview;
         reviewsVm.deleteReview = deleteReview;
+        reviewsVm.goBack = goBack;
 
         init();
 
@@ -54,6 +55,10 @@
                 }), function (error) {
                 Notification.error("Unable to delete the review. Try again");
             }
+        }
+
+        function goBack(){
+            $window.history.back();
         }
 
     }

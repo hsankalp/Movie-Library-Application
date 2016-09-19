@@ -61,8 +61,8 @@
             })
             .when('/home/:id', {
                 templateUrl: 'app/views/user-movie-detail.tmpl.html',
-                controller: 'MovieDetailController',
-                controllerAs: 'movieDetailVm',
+                controller: 'UserMovieDetailController',
+                controllerAs: 'userMovieDetailVm',
                 roles:['user']
             })
             .otherwise({

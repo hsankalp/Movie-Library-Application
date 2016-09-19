@@ -2,47 +2,47 @@
 </div>
 <div class="container">
 
-    <h3>{{movieDetailVm.currentMovie.title}} ({{movieDetailVm.currentMovie.year}})</h3>
+    <h3>{{userMovieDetailVm.currentMovie.title}} ({{userMovieDetailVm.currentMovie.year}})</h3>
     <br>
     <div class="row">
 
         <div class="col-xs-4">
 
-            <a class="imageDetail"><img class="movie-poster" ng-src="{{movieDetailVm.currentMovie.poster}}"></a>
+            <a class="imageDetail"><img class="movie-poster" ng-src="{{userMovieDetailVm.currentMovie.poster}}"></a>
             <br><br>
-            <p><b>Awards: </b><i>{{movieDetailVm.currentMovie.awards}}</i></p>
-            <p><b>Metascore: </b><i>{{movieDetailVm.currentMovie.metascore}}</i></p>
-            <p><b>IMDB Rating: </b><i>{{movieDetailVm.currentMovie.imdbRating}}</i></p>
-            <p><b>IMDB Votes: </b><i>{{movieDetailVm.currentMovie.imdbVotes}}</i></p>
-            <a href="#/reviews/{{movieDetailVm.currentMovie.id}}" class="btn btn-primary">USER REVIEWS</a>
+            <p><b>Awards: </b><i>{{userMovieDetailVm.currentMovie.awards}}</i></p>
+            <p><b>Metascore: </b><i>{{userMovieDetailVm.currentMovie.metascore}}</i></p>
+            <p><b>IMDB Rating: </b><i>{{userMovieDetailVm.currentMovie.imdbRating}}</i></p>
+            <p><b>IMDB Votes: </b><i>{{userMovieDetailVm.currentMovie.imdbVotes}}</i></p>
+            <a href="#/reviews/{{userMovieDetailVm.currentMovie.id}}" class="btn btn-primary">USER REVIEWS</a>
 
         </div>
 
         <div class="col-xs-7">
 
-            <p><b>Director: </b><i>{{movieDetailVm.currentMovie.director}}</i></p>
+            <p><b>Director: </b><i>{{userMovieDetailVm.currentMovie.director}}</i></p>
 
-            <p><b>Writer: </b><i>{{movieDetailVm.currentMovie.writer}}</i></p>
+            <p><b>Writer: </b><i>{{userMovieDetailVm.currentMovie.writer}}</i></p>
 
-            <p><b>Actors: </b><i>{{movieDetailVm.currentMovie.actors}}</i></p>
+            <p><b>Actors: </b><i>{{userMovieDetailVm.currentMovie.actors}}</i></p>
 
-            <p><b>Plot: </b><i>{{movieDetailVm.currentMovie.plot}}</i></p>
+            <p><b>Plot: </b><i>{{userMovieDetailVm.currentMovie.plot}}</i></p>
 
             <hr>
 
-            <p><b>Rated: </b><i>{{movieDetailVm.currentMovie.rated}}</i></p>
+            <p><b>Rated: </b><i>{{userMovieDetailVm.currentMovie.rated}}</i></p>
 
-            <p><b>Released: </b><i>{{movieDetailVm.currentMovie.released}}</i></p>
+            <p><b>Released: </b><i>{{userMovieDetailVm.currentMovie.released}}</i></p>
 
-            <p><b>Runtime: </b><i>{{movieDetailVm.currentMovie.runtime}}</i></p>
+            <p><b>Runtime: </b><i>{{userMovieDetailVm.currentMovie.runtime}}</i></p>
 
-            <p><b>Genre: </b><i>{{movieDetailVm.currentMovie.genre}}</i></p>
+            <p><b>Genre: </b><i>{{userMovieDetailVm.currentMovie.genre}}</i></p>
 
-            <p><b>Language: </b><i>{{movieDetailVm.currentMovie.language}}</i></p>
+            <p><b>Language: </b><i>{{userMovieDetailVm.currentMovie.language}}</i></p>
 
-            <p><b>Country: </b><i>{{movieDetailVm.currentMovie.country}}</i></p>
+            <p><b>Country: </b><i>{{userMovieDetailVm.currentMovie.country}}</i></p>
 
-            <a ng-href="http://www.imdb.com/title/{{movieDetailVm.currentMovie.imdbID}}">Click here to go to <b>{{movieDetailVm.currentMovie.title}}</b> IMDB Page.</a>
+            <a ng-href="http://www.imdb.com/title/{{userMovieDetailVm.currentMovie.imdbID}}">Click here to go to <b>{{userMovieDetailVm.currentMovie.title}}</b> IMDB Page.</a>
 
         </div>
 
